@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     },
     description: siteConfig.description,
     icons: {
-        icon: "/favicon.ico",
+        icon: "/favicon.svg",
         shortcut: "/favicon-16x16.png",
         apple: "/apple-touch-icon.png",
     },
@@ -33,7 +33,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="en" /* suppressHydrationWarning */> 
 			<head />
 			<body
 				className={clsx(
