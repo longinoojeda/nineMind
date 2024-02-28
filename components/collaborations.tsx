@@ -7,17 +7,17 @@ const Collaborations = () => {
                 Collaboration
             </p>
             <LogoCollaboration
-                src="https://i.imgur.com/T5scZQt.png"
+                src="/europeanf.png"
                 alt="Fondo Social Europeo" 
                 size={240}
             />
             <LogoCollaboration
-                src="https://i.imgur.com/nmCrKSw.png"
+                src="/paco-molla.png"
                 alt="IES Poeta Paco Molla" 
                 size={200}
             />
             <LogoCollaboration
-                src="https://i.imgur.com/1xv6jh7.png"
+                src="/aws-academy.png"
                 alt="AWS Academy" 
                 size={200}
             />

@@ -7,6 +7,7 @@ import {
 	NavbarItem,
 	NavbarMenuItem,
 } from "@nextui-org/navbar";
+
 import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
@@ -49,7 +50,7 @@ export const Navbar = () => {
 	return (
 		<NextUINavbar maxWidth="xl" position="sticky">
 			{/* DESKTOP */}
-			<div className="flex items-center md:mt-5 justify-between w-full">
+			<div className="flex items-center md:py-8 justify-between w-full">
 				<NavbarContent className="basis-1/5 sm:basis-full">
 					<NavbarBrand as="li" className="gap-3 max-w-fit">
 						<NextLink className="flex justify-start items-center gap-3" href="/">
@@ -88,7 +89,6 @@ export const Navbar = () => {
 					className="hidden sm:flex basis-1/5 sm:basis-full"
 					justify="end"
 				>
-					{/* SPONSOR */}
 					<ThemeSwitch />
 					<div className="lg:hidden">
 					</div>
@@ -110,8 +110,7 @@ export const Navbar = () => {
 			</div>
 
 			{/* MOBILE */}	
-			<NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-				<ThemeSwitch />
+			<NavbarContent className="md:hidden basis-1 pl-4" justify="end">
 				<NavbarMenuToggle />
 			</NavbarContent>
 

@@ -1,43 +1,22 @@
+import { Course } from "@/types/course";
+import { CardCourse } from "@/components/card-course";
+import { CardContainer } from '@/components/card-container-courses';
+
 export default function Courses() {
-	return (
-		<section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-			{/* <div className="inline-block max-w-lg text-center justify-center">
-				<h1 className={title()}>Make&nbsp;</h1>
-				<h1 className={title({ color: "violet" })}>beautiful&nbsp;</h1>
-				<br />
-				<h1 className={title()}>
-					websites regardless of your design experience.
-				</h1>
-				<h2 className={subtitle({ class: "mt-4" })}>
-					Beautiful, fast and modern React UI library.
-				</h2>
-			</div>
 
-			<div className="flex gap-3">
-				<Link
-					isExternal
-					href={siteConfig.links.docs}
-					className={buttonStyles({ color: "primary", radius: "full", variant: "shadow" })}
-				>
-					Documentation
-				</Link>
-				<Link
-					isExternal
-					className={buttonStyles({ variant: "bordered", radius: "full" })}
-					href={siteConfig.links.github}
-				>
-					<GithubIcon size={20} />
-					GitHub
-				</Link>
-			</div>
+	const testCourse: Course = {
+		curso_id: 1,
+		titulo: "Curso de prueba",
+		descripcion: "Esta es una descripción de prueba para el curso. Es bastante larga para poder ver cómo se recorta en la tarjeta del curso.",
+		portada_url: "https://i.imgur.com/hH6c1sF.png",
+		categoria: "Categoría de prueba",
+		trailer_url: null,
+		fecha_creacion: new Date(),
+	  };
 
-			<div className="mt-8">
-				<Snippet hideSymbol hideCopyButton variant="flat">
-					<span>
-						Get started by editing <Code color="primary">app/page.tsx</Code>
-					</span>
-				</Snippet>
-			</div> */}
-		</section>
-	);
+	  return (
+		<div className="p-4">
+		  <CardContainer courses={[testCourse, testCourse, testCourse, testCourse]} />
+		</div>
+	  );
 }
