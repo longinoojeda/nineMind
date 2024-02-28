@@ -9,7 +9,11 @@ module.exports = {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        ninemind: 'var(--green-ninemind)',
+      },
+    },
   },
   darkMode: "class",
   plugins: [nextui()],

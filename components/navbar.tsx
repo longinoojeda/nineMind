@@ -48,64 +48,69 @@ export const Navbar = () => {
 
 	return (
 		<NextUINavbar maxWidth="xl" position="sticky">
-			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-				<NavbarBrand as="li" className="gap-3 max-w-fit">
-					<NextLink className="flex justify-start items-center gap-3" href="/">
-						<NineMindLogo size={70}/>
-						<article className="flex">
-							<p className="font-regular text-inherit">nine</p>
-							<p className="font-bold text-inherit">Mind</p>
-						</article>
-						
-					</NextLink>
-				</NavbarBrand>
-			</NavbarContent>
-			<NavbarContent justify="start">
-				<NavbarItem className="hidden lg:flex">
-					{searchInput}
-				</NavbarItem>	
-			</NavbarContent>
-			<NavbarContent justify="end">
-				<ul className="hidden lg:flex gap-4 justify-start ml-2">
-					{siteConfig.navItems.map((item) => (
-						<NavbarItem key={item.href}>
-							<NextLink
-								className={clsx(
-									linkStyles({ color: "foreground" }),
-									"data-[active=true]:text-primary data-[active=true]:font-medium"
-								)}
-								color="foreground"
-								href={item.href}
-							>
-								{item.label}
-							</NextLink>
-						</NavbarItem>
-					))}
-				</ul>
-			</NavbarContent>
-			<NavbarContent
-				className="hidden sm:flex basis-1/5 sm:basis-full"
-				justify="end"
-			>
-				{/* SPONSOR */}
-				<NavbarItem className="hidden md:flex">
-					<Button
-						isExternal
-						as={Link}
-						className="text-sm font-normal text-default-600 bg-default-100"
-						href={siteConfig.links.sponsor}
-						startContent={<HeartFilledIcon className="text-danger" />}
-						variant="flat"
-					>
-						Sponsor
-					</Button>
-				</NavbarItem>
-			</NavbarContent>
+			{/* DESKTOP */}
+			<div className="flex items-center md:mt-5 justify-between w-full">
+				<NavbarContent className="basis-1/5 sm:basis-full">
+					<NavbarBrand as="li" className="gap-3 max-w-fit">
+						<NextLink className="flex justify-start items-center gap-3" href="/">
+							<NineMindLogo size={70} />
+							<article className="flex">
+								<p className="font-regular text-inherit text-black dark:text-white">nine</p>
+								<p className="font-bold text-inherit">Mind</p>
+							</article>
+						</NextLink>
+					</NavbarBrand>
+				</NavbarContent>
+				<NavbarContent >
+					<NavbarItem className="hidden md:flex">
+						{searchInput}
+					</NavbarItem>
+				</NavbarContent>
+				<NavbarContent justify="end">
+					<ul className="hidden md:flex gap-10 justify-between ml-2">
+						{siteConfig.navItems.map((item) => (
+							<NavbarItem key={item.href}>
+								<NextLink
+									className={clsx(
+										linkStyles({ color: "foreground" }),
+										"data-[active=true]:text-primary data-[active=true]:font-medium"
+									)}
+									color="foreground"
+									href={item.href}
+								>
+									{item.label}
+								</NextLink>
+							</NavbarItem>
+						))}
+					</ul>
+				</NavbarContent>
+				<NavbarContent
+					className="hidden sm:flex basis-1/5 sm:basis-full"
+					justify="end"
+				>
+					{/* SPONSOR */}
+					<ThemeSwitch />
+					<div className="lg:hidden">
+					</div>
+					<NavbarItem className="hidden md:flex">
+						<Button
+							className="text-md font-bold text-ninemind bg-default-50"
+							variant="flat"
+						>
+							Log in
+						</Button>
+						<Button
+							className="text-md font-semibold text-white bg-ninemind dark:text-white"
+							variant="bordered"
+						>
+							Sign up
+						</Button>
+					</NavbarItem>
+				</NavbarContent>
+			</div>
 
+			{/* MOBILE */}	
 			<NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-				<Link isExternal href={siteConfig.links.github} aria-label="Github">
-					<GithubIcon className="text-default-500" />
-				</Link>
 				<ThemeSwitch />
 				<NavbarMenuToggle />
 			</NavbarContent>

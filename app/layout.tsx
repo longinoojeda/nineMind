@@ -19,7 +19,6 @@ export const metadata: Metadata = {
         default: siteConfig.name,
         template: `%s - ${siteConfig.name}`,
     },
-    description: siteConfig.description,
     icons: {
         icon: "/favicon.svg",
         shortcut: "/favicon-16x16.png",
@@ -41,13 +40,13 @@ export default function RootLayout({
 					fontSans.variable
 				)}
 			>
-				<Providers themeProps={{ attribute: "class", defaultTheme: "ligth" }}>
+				<Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
 					<div className="relative flex flex-col h-screen">
 						<Navbar />
 						<main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
 							{children}
 						</main>
-						<footer className="w-full flex items-center justify-center py-3">
+						{/* <footer className="w-full flex items-center justify-center py-3">
 							<Link
 								isExternal
 								className="flex items-center gap-1 text-current"
@@ -57,7 +56,7 @@ export default function RootLayout({
 								<span className="text-default-600">Powered by</span>
 								<p className="text-primary">NextUI</p>
 							</Link>
-						</footer>
+						</footer> */}
 					</div>
 				</Providers>
 			</body>
