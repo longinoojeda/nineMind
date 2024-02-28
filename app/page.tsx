@@ -38,11 +38,18 @@ export default function Home() {
 						Provides you with the latest online learning system and material that help your knowledge growing.
 					</h2>
 				</div>
-				<Skeleton className="hidden md:block rounded-lg">
-					<div className="h-64 w-64 lg:h-80 lg:w-96 rounded-lg bg-default-300"></div>
+				<Skeleton className="hidden md:block h-64 w-64 lg:h-96 lg:w-96 bg-default-300 rounded-full">
+
 				</Skeleton>
 			</section>
 			<Collaborations />
+			<section>
+			<div className="flex flex-col gap-2 max-w-full text-center md:text-left mt-20 mb-10">
+						<h3 className="text-md font-bold text-ninemind">Explore Programs</h3>
+						<h3 className="text-2xl font-bold text-gray-600 dark:text-gray-200">Our Most Popular Class</h3>
+						<h3 className="text-lg text-gray-500 dark:text-gray-2300">Let's join our famous class, the knowledge provided will definitely be useful for you.</h3>
+				</div>
+			</section>
 			<div className="p-4">
 				<CardContainer courses={[testCourse, testCourse, testCourse, testCourse]} />
 			</div>
