@@ -1,7 +1,6 @@
 import { title, subtitle } from "@/components/primitives";
 import {Skeleton} from "@nextui-org/skeleton";
 import Collaborations from "@/components/collaborations";
-import CollaborationsDarkmode from "@/components/collaborations-darkmode";
 
 export default function Home() {
 	return (
