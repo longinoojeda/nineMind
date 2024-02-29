@@ -1,15 +1,18 @@
-import { useRouter } from 'next/router'
+"use client";
+import { useRouter } from 'next/navigation';
+import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react';
 import { fetchCourse } from "@/lib/fetchCourses";
-import { Course as CourseType } from "@/types/course";
+import { Course } from "@/types/course";
 import { Skeleton } from "@nextui-org/skeleton";
 
 
-const Course = () => {
-    const router = useRouter()
-    const { course_id } = router.query
+export default function CoursePage() {
 
-    const [course, setCourse] = useState<CourseType | null>(null);
+    const searchParams = useSearchParams();
+    const course_id = searchParams.get('id');
+
+    const [course, setCourse] = useState<Course | null>(null);
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -24,21 +27,22 @@ const Course = () => {
         <>
             <div className="">
                 <div>
-                    <video controls width="640" height="360">
-                        <source src={course?.trailer_url || ''} type="video/mp4" />
-                        {!course?.trailer_url && <Skeleton />}
-                        {course?.trailer_url && (
-                            <video controls width="640" height="360">
-                                <source src={course.trailer_url} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-                        )}
-                    </video>
-
+                    {!course?.trailer_url && <Skeleton />}
+                    {course?.trailer_url && (
+                        <video controls width="640" height="360">
+                            <source src={course.trailer_url} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    )}
                 </div>
-                <div>
-
-                </div>
+                {course?.course_id ? (
+                    <div>
+                        <h1>{course.tittle}</h1>
+                        <p>{course.description}</p>
+                    </div>
+                ) : (
+                    <Skeleton />
+                )}
             </div>
         </>
     );
