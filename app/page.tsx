@@ -8,13 +8,13 @@ import { CardContainer } from '@/components/card-container-courses';
 export default function Home() {
 
 	const testCourse: Course = {
-		curso_id: 1,
-		titulo: "Curso de prueba",
-		descripcion: "Esta es una descripción de prueba para el curso. Es bastante larga para poder ver cómo se recorta en la tarjeta del curso.",
-		portada_url: "https://i.imgur.com/hH6c1sF.png",
-		categoria: "Categoría de prueba",
+		course_id: 1,
+		tittle: "Curso de prueba",
+		description: "Esta es una descripción de prueba para el curso. Es bastante larga para poder ver cómo se recorta en la tarjeta del curso.",
+		facebook_url: "https://i.imgur.com/hH6c1sF.png",
+		category: "Categoría de prueba",
 		trailer_url: null,
-		fecha_creacion: new Date(),
+		creation_date: new Date(),
 	};
 
 	return (
