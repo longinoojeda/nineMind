@@ -20,9 +20,7 @@ import clsx from "clsx";
 
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
-	TwitterIcon,
 	GithubIcon,
-	DiscordIcon,
 	HeartFilledIcon,
 	SearchIcon,
 	NineMindLogo,
@@ -50,7 +48,7 @@ export const Navbar = () => {
 	return (
 		<NextUINavbar maxWidth="xl" position="sticky">
 			{/* DESKTOP */}
-			<div className="flex items-center md:py-8 justify-between w-full">
+			<div className="flex items-center md:py-8 justify-between w-full animate-fade-down animate-once animate-ease-out">
 				<NavbarContent className="basis-1/5 sm:basis-full">
 					<NavbarBrand as="li" className="gap-3 max-w-fit">
 						<NextLink className="flex justify-start items-center gap-3" href="/">

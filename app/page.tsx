@@ -2,8 +2,8 @@ import { title, subtitle } from "@/components/primitives";
 import { Skeleton } from "@nextui-org/skeleton";
 import Collaborations from "@/components/collaborations";
 import { Course } from "@/types/course";
-import { CardCourse } from "@/components/card-course";
 import { CardContainer } from '@/components/card-container-courses';
+import Image from 'next/image'
 
 export default function Home() {
 
@@ -20,7 +20,7 @@ export default function Home() {
 	return (
 		<>
 			<section className="flex flex-col md:flex-row items-center justify-between gap-4 ">
-				<div className="flex flex-col gap-4 max-w-lg text-center md:text-left">
+				<div className="flex flex-col gap-4 max-w-lg text-center md:text-left animate-fade-right animate-once animate-ease-out">
 					<div>
 						<h1 className={title({ size: 'lg' })}>Up Your&nbsp;</h1>
 						<h1 className={title({ color: "nineMindGreen", size: 'lg' })}>Skills&nbsp;</h1>
@@ -38,11 +38,21 @@ export default function Home() {
 						Provides you with the latest online learning system and material that help your knowledge growing.
 					</h2>
 				</div>
-				<Skeleton className="hidden md:block h-64 w-64 lg:h-96 lg:w-96 bg-default-300 rounded-full">
-
-				</Skeleton>
+				<div className="bg-ninemind rounded-full hidden md:block ">
+					<figure className="animate-flip-up animate-once animate-ease-out">
+						<Image 
+							src='/student.png'
+							alt='Un estudiante muy feliz' 
+							height={450}
+							width={450}
+						/>
+					</figure>
+				</div>
 			</section>
+			<section className="animate-fade-up animate-once animate-ease-out">
 			<Collaborations />
+
+			</section>
 			<section>
 			<div className="flex flex-col gap-2 max-w-full text-center md:text-left mt-20 mb-10">
 						<h3 className="text-md font-bold text-ninemind">Explore Programs</h3>

@@ -1,5 +1,6 @@
 import {nextui} from '@nextui-org/theme'
 
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -16,5 +17,8 @@ module.exports = {
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [
+    nextui(), 
+    require('tailwindcss-animated')
+  ],
 }
