@@ -6,11 +6,21 @@ const fetchCourse = async (course_id: string): Promise<Course> => {
         .from('courses')
         .select('*')
         .eq('course_id', course_id)
-        .single(); //return only one row, so we don't need specify the index. 
+        .single(); //return only one row, so we don't need specify the index. :) 
 
     if (error) throw error;
 
     return data;
 }
 
-export { fetchCourse };
+const fetchAllCourses = async (): Promise<Course[]> => {
+    const { data, error } = await supabase
+        .from('courses')
+        .select('*');
+
+    if (error) throw error;
+
+    return data;
+}
+
+export { fetchCourse, fetchAllCourses };

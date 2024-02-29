@@ -10,7 +10,7 @@ export const CardCourse = (props: { course: Course }) => {
         : "";
 
     return (
-        <Link href={`/course/${course.course_id}`}>
+        <Link href={`/course/${course.course_id}`}> 
             <div className="bg-gray-50 dark:bg-zinc-900 shadow-lg rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
                     <div className="relative h-56 w-full">
                         {course.facebook_url && (

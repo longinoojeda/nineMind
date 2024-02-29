@@ -1,13 +1,17 @@
+"use client";
 import { title, subtitle } from "@/components/primitives";
-import { Skeleton } from "@nextui-org/skeleton";
 import Collaborations from "@/components/collaborations";
 import { Course } from "@/types/course";
 import { CardContainer } from '@/components/card-container-courses';
 import Image from 'next/image'
+import { supabaseClient as supabase } from "@/config/supabase";
+import { fetchAllCourses } from "@/lib/fetchCourses";
+import { useEffect, useState } from "react";
 
 export default function Home() {
 
-	const testCourse: Course = {
+
+	/* const testCourse: Course = {
 		course_id: 1,
 		tittle: "Curso de prueba",
 		description: "Esta es una descripción de prueba para el curso. Es bastante larga para poder ver cómo se recorta en la tarjeta del curso.",
@@ -15,7 +19,17 @@ export default function Home() {
 		category: "Categoría de prueba",
 		trailer_url: null,
 		creation_date: new Date(),
-	};
+	}; */
+
+	const [courses, setCourses] = useState<Course[]>([]);
+	const [error, setError] = useState(null);
+
+	// Fetch all courses
+    useEffect(() => {
+        fetchAllCourses()
+			.then(data => setCourses(data))
+			.catch(error => setError(error));
+    }, []); 
 
 	return (
 		<>
@@ -50,8 +64,7 @@ export default function Home() {
 				</div>
 			</section>
 			<section className="animate-fade-up animate-once animate-ease-out">
-			<Collaborations />
-
+				<Collaborations />
 			</section>
 			<section>
 			<div className="flex flex-col gap-2 max-w-full text-center md:text-left mt-20 mb-10">
@@ -61,7 +74,7 @@ export default function Home() {
 				</div>
 			</section>
 			<div className="p-4">
-				<CardContainer courses={[testCourse, testCourse, testCourse, testCourse]} />
+				<CardContainer courses={courses} />
 			</div>
 		</>
 	);
