@@ -7,7 +7,7 @@ export default function Project() {
 		  Project Overview
 		</h1>
 		{/* Descripción del proyecto */}
-		<p className="text-lg text-gray-700 max-w-3xl text-center">
+		<p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl text-center">
 		  Welcome to the project overview page! Our platform aims to provide a
 		  seamless online learning experience through on-demand video courses. We
 		  prioritize simplicity and scalability, focusing on efficient
