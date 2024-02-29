@@ -48,13 +48,13 @@ export default function CoursePage() {
                 <div className='w-full md:w-3/4'>
                     {!course?.trailer_url && <Skeleton />}
                     {course?.trailer_url && (
-                        <video controls width="960" height="360" className='rounded-xl' poster={course.facebook_url ?? ''}>
+                        <video controls width="960" height="360" className='rounded-xl animate-jump-in' poster={course.facebook_url ?? ''}>
                             <source src={course.trailer_url} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                     )}
                     <Link href={`/courses/course/player?id=${course_id}`}>
-                        <button className="w-full py-2 mt-4 bg-ninemind text-white rounded-md transition duration-200 ease-in-out md:hidden">
+                        <button className=" animate-fade-down w-full py-2 mt-4 bg-ninemind text-white rounded-md transition duration-200 ease-in-out md:hidden">
                             Watch
                         </button>
                     </Link>
@@ -70,14 +70,14 @@ export default function CoursePage() {
                         <h2 className='text-2xl font-bold text-gray-700 dark:text-gray-200'>Content</h2>
                         <Accordion>
                             {videos.map((video, index) => (
-                                <AccordionItem key={index} aria-label={video.tittle} title={video.tittle} className='border bg-gray-50 dark:bg-gray-800 border-gray-200 rounded-lg my-1 px-2 text-gray-700'>
+                                <AccordionItem key={index} aria-label={video.tittle} title={video.tittle} className='border animate-flip-down bg-gray-50 dark:bg-gray-800 border-gray-200 rounded-lg my-1 px-2 text-gray-700'>
                                     <p className='dark:text-gray-500'>{video.description}</p>
                                 </AccordionItem>
                             ))}
                         </Accordion>
                     </section>
                 </div>
-                <div className='w-1/5 hidden md:flex border border-gray-100 dark:border-gray-700 h-96 rounded-xl shadow-2xl flex flex-col justify-end'>
+                <div className=' animate-fade-left w-1/5 md:flex border border-gray-100 dark:border-gray-700 h-96 rounded-xl shadow-2xl flex flex-col justify-end'>
                     <Link href={`/courses/course/player?id=${course_id}`}>
                         <button className="w-full py-2 mt-4 bg-ninemind text-white rounded-md transition duration-200 ease-in-out">
                             Watch

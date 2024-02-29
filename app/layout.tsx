@@ -46,14 +46,14 @@ export default function RootLayout({
 						<main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
 							{children}
 						</main>
-						<footer className="w-full flex items-center justify-center py-3">
+						<footer className="w-full flex items-center justify-center py-8 mt-10 bg-zinc-800">
 							<Link
 								isExternal
 								className="flex items-center gap-1 text-current"
 								href="https://github.com/longinoojeda/nineMind"
 							>
-								<span className="text-default-600">Discover more in</span>
-								<p className="text-primary">Github</p>
+								<span className="dark:text-default-600 text-gray-400">Explore further in</span>
+								<p className="text-ninemind">Github</p>
 							</Link>
 						</footer>
 					</div>
